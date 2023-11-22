@@ -74,7 +74,11 @@
     </section>
     <script src="script.js"></script>
     <script>
-            window.location.href = "login.html"; 
+            window.onload = function() {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (!isLoggedIn) {
+                window.location.href = "login.html";
+            }
     </script>
 
 </body>
