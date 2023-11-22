@@ -18,8 +18,20 @@
 
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            window.location.href = "index.html"; 
+            event.preventDefault(); 
+
+            
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            
+            if (username === "usuario" && password === "senha") {
+                
+                localStorage.setItem("isLoggedIn", "true");
+                window.location.href = "cardapio.html"; 
+            } else {
+                alert("Login inválido. Por favor, tente novamente.");
+            }
         });
     </script>
 </body>
